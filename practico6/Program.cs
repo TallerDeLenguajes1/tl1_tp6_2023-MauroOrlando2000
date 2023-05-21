@@ -58,3 +58,47 @@ for(int i=0; i<2; i++)
 
 Console.WriteLine("El número original es "+intNum);
 Console.WriteLine("El número invertido es "+invertido);
+
+
+
+//EJERCICIO 2
+
+int num1, num2;
+anda = false;
+Console.WriteLine("\n\nCalculadora V1");
+while(!anda)
+{
+    while(!anda || intNum < 1 || intNum > 4)
+    {
+        Console.WriteLine("Que desea hacer?\n1.Sumar\n2.Restar\n3.Multiplicar\n4.Dividir");
+        stringNum = Console.ReadLine();
+        anda = int.TryParse(stringNum, out intNum);
+        if(!anda || intNum < 1 || intNum > 4)
+        {
+            Console.WriteLine("Numero inválido\n");
+        }
+    }
+
+    Console.WriteLine("Ingrese el primer número");
+    num1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Ingrese el segundo número");
+    num2 = Convert.ToInt32(Console.ReadLine());
+    switch(intNum)
+    {
+        case 1: num1 += num2;
+                break;
+        case 2: num1 -= num2;
+                break;
+        case 3: num1 *= num2;
+                break;
+        case 4: num1 /= num2;
+                break;
+    }
+    Console.WriteLine("El resultado es " + num1 + "\n");
+    Console.WriteLine("Desea realizar otra operacion? (1=Si, 0=No)");
+    num2 = Convert.ToInt32(Console.ReadLine());
+    if(num2 == 1)
+    {
+        anda = false;
+    }
+}
