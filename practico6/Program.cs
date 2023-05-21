@@ -61,7 +61,7 @@ Console.WriteLine("El número invertido es "+invertido);
 
 
 
-//EJERCICIO 2
+//CALCULADORA
 
 int num1, num2;
 anda = false;
