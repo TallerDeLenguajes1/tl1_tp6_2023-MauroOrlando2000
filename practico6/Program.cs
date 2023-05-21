@@ -58,3 +58,58 @@ for(int i=0; i<2; i++)
 
 Console.WriteLine("El número original es "+intNum);
 Console.WriteLine("El número invertido es "+invertido);
+
+
+//CALCULADORAV2
+
+double num1=0;
+int num2;
+anda = false;
+Console.WriteLine("\n\nCalculadora");
+while(!anda)
+{
+    while(!anda || intNum < 1 || intNum > 6)
+    {
+        Console.WriteLine("Que desea hacer?\n1.Valor Absoluto\n2.Cuadrado de un número\n3.Raiz cuadrada\n4.Seno\n5.Coseno\n6.Entero de un número float");
+        stringNum = Console.ReadLine();
+        anda = int.TryParse(stringNum, out intNum);
+        if(!anda || intNum < 1 || intNum > 6)
+        {
+            Console.WriteLine("Numero inválido\n");
+        }
+    }
+    anda = false;
+
+    while(!anda)
+    {
+        Console.WriteLine("Ingrese el número a operar");
+        stringNum = Console.ReadLine();
+        anda = double.TryParse(stringNum, out num1);
+        if(!anda)
+        {
+            Console.WriteLine("Numero inválido\n");
+        }
+    }
+    switch(intNum)
+    {
+        case 1: num1 = Math.Abs(num1);
+                break;
+        case 2: num1 *= num1;
+                break;
+        case 3: num1 = Math.Sqrt(num1);
+                break;
+        case 4: num1 = Math.Sin(num1);
+                break;
+        case 5: num1 = Math.Cos(num1);
+                break;
+        case 6: num1 = Convert.ToInt32(num1);
+                break;
+    }
+    Console.WriteLine("El resultado es " + num1 + "\n");
+    Console.WriteLine("Desea realizar otra operacion? (1=Si, 0=No)");
+    num2 = Convert.ToInt32(Console.ReadLine());
+    if(num2 == 1)
+    {
+        anda = false;
+    }
+}
