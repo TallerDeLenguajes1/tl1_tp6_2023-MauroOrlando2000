@@ -156,3 +156,38 @@ while(!anda)
         anda = false;
     }
 }
+
+anda = false;
+while(!anda)
+{
+    Console.WriteLine("Ingrese el primer número");
+    stringNum = Console.ReadLine();
+    anda = double.TryParse(stringNum, out num1);
+    if(!anda)
+    {
+        Console.WriteLine("Numero inválido\n");
+    }
+}
+
+anda = false;
+while(!anda)
+{
+    Console.WriteLine("Ingrese el segundo número");
+    stringNum = Console.ReadLine();
+    anda = int.TryParse(stringNum, out intNum);
+    if(!anda)
+    {
+        Console.WriteLine("Numero inválido\n");
+    }
+}
+
+if(intNum > num1)
+{
+    Console.WriteLine("El número mayor es "+intNum);
+    Console.WriteLine("El número menor es "+num1);
+}
+else
+{
+    Console.WriteLine("El número mayor es "+num1);
+    Console.WriteLine("El número menor es "+intNum);
+}
