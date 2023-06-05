@@ -8,7 +8,6 @@ b=a;
 Console.WriteLine("valor de a: "+a);
 Console.WriteLine("valor de b: "+b);
 
-
 //EJERCICIO 1
 
 int intNum = 1;
@@ -191,3 +190,108 @@ else
     Console.WriteLine("El número mayor es "+num1);
     Console.WriteLine("El número menor es "+intNum);
 }
+
+
+//EJERCICIO 4
+
+string? cadenaUno = null, cadenaDos = null;
+anda = false;
+
+Console.WriteLine("Ingrese una cadena de caracteres");
+while(!anda)
+{
+    cadenaUno = Console.ReadLine();
+    if(cadenaUno == null)
+    {
+        Console.WriteLine("No puede ser una cadena nula");
+    }
+    else
+    {
+        anda = true;
+    }
+}
+
+Console.WriteLine($"La longitud de la cadena es {cadenaUno.Length}");
+
+Console.WriteLine("Ingrese una segunda cadena de caracteres");
+anda = false;
+while(!anda)
+{
+    cadenaDos = Console.ReadLine();
+    if(cadenaDos == null)
+    {
+        Console.WriteLine("No puede ser una cadena nula");
+    }
+    else
+    {
+        anda = true;
+    }
+}
+
+Console.WriteLine("Cadenas concatenadas: " + cadenaUno + " " + cadenaDos);
+
+Console.WriteLine($"Subcadena extraida: " + cadenaUno.Substring(5));
+
+anda = false;
+while(!anda || intNum < 1 || intNum > 4)
+{
+    Console.WriteLine("Que desea hacer?\n1.Sumar\n2.Restar\n3.Multiplicar\n4.Dividir");
+    stringNum = Console.ReadLine();
+    anda = int.TryParse(stringNum, out intNum);
+    if(!anda || intNum < 1 || intNum > 4)
+    {
+        Console.WriteLine("Numero inválido\n");
+    }
+}
+
+Console.WriteLine("Ingrese el primer número");
+num1 = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Ingrese el segundo número");
+num2 = Convert.ToInt32(Console.ReadLine());
+switch(intNum)
+{
+    case 1: num1 += num2;
+            Console.WriteLine($"La suma de {num1-num2} y {num2} es {num1}");
+            break;
+    case 2: num1 -= num2;
+            Console.WriteLine($"La resta de {num1+num2} y {num2} es {num1}");
+            break;
+    case 3: num1 *= num2;
+            Console.WriteLine($"La multiplicación de {num1/num2} y {num2} es {num1}");
+            break;
+    case 4: num1 /= num2;
+            Console.WriteLine($"La división de {num1*num2} y {num2} es {num1}");
+            break;
+}
+
+foreach(char i in cadenaUno)
+{
+    Console.WriteLine(i);
+}
+
+Console.WriteLine("Ingrese una palabra a buscar en la cadena");
+anda = false;
+while(!anda)
+{
+    cadenaDos = Console.ReadLine();
+    if(cadenaDos == null)
+    {
+        Console.WriteLine("No puede ser una cadena nula");
+    }
+    else
+    {
+        anda = true;
+    }
+}
+
+if(cadenaUno.IndexOf(cadenaDos) != -1)
+{
+    Console.WriteLine($"La palabra \"{cadenaDos}\" se encuentra en \"{cadenaUno}\" en la posición {cadenaUno.IndexOf(cadenaDos)}");
+}
+else
+{
+    Console.WriteLine("Coincidencia no encontrada");
+}
+
+Console.WriteLine($"Cadena en mayusculas: {cadenaUno.ToUpper()}");
+Console.WriteLine($"Cadena en minusculas: {cadenaUno.ToLower()}");
